@@ -112,8 +112,8 @@ if $USESSH; then
     ARGS="-g --name='$SVNAME' --map='$MAP' --maxplayers='$MAXPLAYERS' --port='$SVPORT' --logsapi='$LOGSAPI' --dyndns='$DYNDNS' --rcon='$RCON' --volume='$DOCKERVOL'"
     echo $ARGS
     ssh root@$REMOTEIP systemctl enable tf2.service
+    ssh root@$REMOTEIP systemctl enable docker
     ssh root@$REMOTEIP "bash -s" -- < ./install.sh $ARGS
-    ssh root@$REMOTEIP systemctl start tf2.service
 else
     dcreate
     echo "SERVER PROVISIONED"
