@@ -17,7 +17,6 @@ USEVOL=false
 DOCKERVOL=""
 DOCKERIMG="brettowen/tf2-docker-bball"
 CNAME="bball"
-ARGS=$@
 
 eval set -- "$OPTS"
 

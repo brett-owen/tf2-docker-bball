@@ -1,5 +1,5 @@
-tf2-docker-sm
-=============
+tf2-docker-bball
+================
 
 **tf2-docker-bball** is a build script for a Team Fortress 2 docker container, the container is pre-configured with [Metamod:Source](https://www.sourcemm.net/) and [SourceMod](https://www.sourcemod.net/) by default, but the entire tf/ directory of the server can be overridden using attached volumes. This is useful for adding maps and configs as well.
 
