@@ -4,7 +4,7 @@ MAINTAINER Brett Owen <brett@brettowen.ca>
 
 WORKDIR /home/steam/steamcmd/tf2/tf
 ADD ./install/tf /mnt/
-RUN cp -asf /mnt/* /home/steam/steamcmd/tf2/tf
+RUN cp -af /mnt/* /home/steam/steamcmd/tf2/tf
 
 ADD startserver.sh /home/steam/steamcmd/startserver.sh
 

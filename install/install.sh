@@ -109,7 +109,7 @@ if $USESSH; then
     if $USEVOL; then
         scp -r ./tf root@$REMOTEIP:$DOCKERVOL
     fi
-    ARGS="--name='$SVNAME' --map='$MAP' --maxplayers='$MAXPLAYERS' --port='$SVPORT' --logsapi='$LOGSAPI' --dyndns='$DYNDNS' --rcon='$RCON' --volume='$DOCKERVOL'"
+    ARGS="-g --name='$SVNAME' --map='$MAP' --maxplayers='$MAXPLAYERS' --port='$SVPORT' --logsapi='$LOGSAPI' --dyndns='$DYNDNS' --rcon='$RCON' --volume='$DOCKERVOL'"
     echo $ARGS
     ssh root@$REMOTEIP systemctl enable tf2.service
     ssh root@$REMOTEIP "bash -s" -- < ./install.sh $ARGS
