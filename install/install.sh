@@ -79,7 +79,7 @@ dcreate()
                 --name=bball \
                 --network=host \
                 --restart=unless-stopped \
-                -v $DOCKERIMG:/mnt \
+                -v $DOCKERVOL:/mnt \
                 -e MAP=$MAP \
                 -e SV_HOSTNAME="$SVNAME" \
                 -e SV_MAXPLAYERS=$MAXPLAYERS \
