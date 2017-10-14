@@ -113,6 +113,7 @@ if $USESSH; then
     echo $ARGS
     ssh root@$REMOTEIP systemctl enable tf2.service
     ssh root@$REMOTEIP "bash -s" -- < ./install.sh $ARGS
+    ssh root@$REMOTEIP systemctl start tf2.service
 else
     dcreate
     echo "SERVER PROVISIONED"
