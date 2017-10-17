@@ -3,7 +3,7 @@ tf2-docker-bball
 
 **tf2-docker-bball** is a build script for a Team Fortress 2 docker container, the container is pre-configured with [Metamod:Source](https://www.sourcemm.net/) and [SourceMod](https://www.sourcemod.net/) by default, but the entire tf/ directory of the server can be overridden using attached volumes. This is useful for adding maps and configs as well.
 
-This container also contains the TFTrue plugin and my own kothbball plugin as well as some bball maps.
+This container also contains LogsTF and SupStats2 plugins by F2 and my own kothbball plugin as well as some bball maps.
 
 Usage
 -----
@@ -45,8 +45,44 @@ Personally, I use this with a vps-hosted docker provider, like [DigitalOcean](ht
 
 In the `install` folder I've provided an installation script for linux machines.
 
-**Usage**
+**Usage = Replace the variables in the included install script with your own information and run the script on the machine you wish to install**
 ```bash
-./install.sh -g --name="<SERVERNAME>" --map="<MAP>" --maxplayers="<MAXPLAYERS>" --port="<PORT>" --logsapi="<LOGS.TF API KEY>" --dyndns="<LINK TO DYNDNS UPDATE>" --rcon="<SERVERRCON>" --ip="<REMOTEIP>" --volume="<PATH>"
+#!/bin/bash
+
+SVNAME="ServerName"
+RCON="ServerRcon"
+MAP="ctf_ballin_skyfall"
+MAXPLAYERS="10"
+SVPORT="27015"
+LOGSAPI=7
+DYNDNS=""
+DOCKERVOL="/root/tf"
+DOCKERIMG="brettowen/tf2-docker-bball"
+CNAME="bball"
+
+mkdir /root/tf /root/tf/maps /root/tf/addons /root/tf/cfg
+
+docker stop $CNAME
+docker rm $CNAME
+docker rmi $DOCKERIMG
+
+docker create \
+       --name=$CNAME \
+       --network=host \
+       --restart=unless-stopped \
+       -v $DOCKERVOL:/mnt \
+       -e MAP=$MAP \
+       -e SV_HOSTNAME="$SVNAME" \
+       -e SV_MAXPLAYERS=$MAXPLAYERS \
+       -e RCON_PASSWORD="$RCON" \
+       -e SV_PORT=$SVPORT \
+       -e LOGS_APIKEY=$LOGSAPI \
+       $DOCKERIMG
+
+curl -s $DYNDNS
+docker start $CNAME
+systemctl enable docker
 ```
-All of the options are optional, REMOTEIP is the ip of a remote server that you have ssh access to. PATH is a path to a `tf` folder containing maps, configs, and other addons.
+You can also pipe the script to a remote server via ssh `ssh root@ip "bash -s" < install.sh`
+DOCKERVOL is a path to a `tf` folder containing maps, configs, and other addons located on the server.
+DYNDNS is a dynamic dns update link for the server, ignore it if you don't have one.
