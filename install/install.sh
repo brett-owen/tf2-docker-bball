@@ -11,7 +11,7 @@ DOCKERVOL="/root/tf"
 DOCKERIMG="brettowen/tf2-docker-bball"
 CNAME="bball"
 
-mkdir /root/tf /root/tf/maps /root/tf/addons /root/tf/cfg
+mkdir $DOCKERVOL $DOCKERVOL/maps $DOCKERVOL/addons $DOCKERVOL/cfg
 
 docker stop $CNAME
 docker rm $CNAME
