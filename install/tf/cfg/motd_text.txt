@@ -1,1 +1,6 @@
-Test Server Please Ignore
+King Of The Hill Bball
+
+Type !add to play.
+
+!remove  --> Removes you from the game
+!streaks --> Shows top win streaks.

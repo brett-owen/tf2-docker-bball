@@ -561,7 +561,7 @@
 	"The Black Box"							"0"
 	"The Buff Banner"						"0"
 	"The Concheror"							"0"
-	"The Cow Mangler 5000"						"0"
+	"The Cow Mangler 5000"						"1"
 	"The Direct Hit"						"0"
 	"The Disciplinary Action"					"0"
 	"The Equalizer"							"0"
