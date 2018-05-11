@@ -28,6 +28,7 @@ docker create \
        -e RCON_PASSWORD="$RCON" \
        -e SV_PORT=$SVPORT \
        -e LOGS_APIKEY=$LOGSAPI \
+       -e DEMOS_APIKEY=$DEMOSAPI \
        $DOCKERIMG
 
 curl -s $DYNDNS

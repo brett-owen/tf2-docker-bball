@@ -1,6 +1,6 @@
-<h1>King Of The Hill Bball</h1>
+<h1>King Of The Hill bball</h1>
 </br>
-<h1>Type !add to play.</h1>
+<h1>Type !add in chat to play.</h1>
 
 <p>!remove  --> Removes you from the game</p>
 <p>!streaks --> Shows top win streaks.</p>

@@ -1,6 +1,6 @@
-King Of The Hill Bball
+King Of The Hill bball
 
-Type !add to play.
+Type !add in chat to play.
 
 !remove  --> Removes you from the game
 !streaks --> Shows top win streaks.

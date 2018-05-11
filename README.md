@@ -3,7 +3,7 @@ tf2-docker-bball
 
 **tf2-docker-bball** is a build script for a Team Fortress 2 docker container, the container is pre-configured with [Metamod:Source](https://www.sourcemm.net/) and [SourceMod](https://www.sourcemod.net/) by default, but the entire tf/ directory of the server can be overridden using attached volumes. This is useful for adding maps and configs as well.
 
-This container also contains LogsTF and SupStats2 plugins by F2 and my own kothbball plugin as well as some bball maps.
+This container also contains LogsTF and SupStats2 plugins by F2, demos.tf plugins, and my own kothbball plugin as well as some bball maps.
 
 Usage
 -----
@@ -18,6 +18,7 @@ The environment variables you can set are:
 - RCON_PASSWORD
 - SV_PORT
 - LOGS_APIKEY
+- DEMOS_APIKEY
 
 By linking a folder containing a structure like the tf folder in Team Fortress 2 (maps/cfg/addons) you can override the defaults for the server and add maps.
 
