@@ -3,7 +3,6 @@ FROM brettowen/tf2-docker-base
 MAINTAINER Brett Owen <brett@brettowen.ca>
 
 WORKDIR /home/steam/steamcmd/tf2/tf
-https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git961-linux.tar.gz
 RUN wget https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git961-linux.tar.gz
 RUN tar -xvzf mmsource-1.10.7-git961-linux.tar.gz
 RUN wget https://sm.alliedmods.net/smdrop/1.8/sourcemod-1.8.0-git6044-linux.tar.gz
