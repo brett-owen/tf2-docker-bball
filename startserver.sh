@@ -12,6 +12,9 @@ echo 'tv_snapshotrate 66' >> /home/steam/steamcmd/tf2/tf/cfg/autoexec.cfg
 echo 'tv_transmitall 1' >> /home/steam/steamcmd/tf2/tf/cfg/autoexec.cfg
 echo 'tv_maxclients 0' >> /home/steam/steamcmd/tf2/tf/cfg/autoexec.cfg
 echo 'tv_autorecord 0' >> /home/steam/steamcmd/tf2/tf/cfg/autoexec.cfg
+echo 'sm_respawn_time_enabled 1' >> /home/steam/steamcmd/tf2/tf/cfg/autoexec.cfg
+echo 'sm_respawn_time_blue 2' >> /home/steam/steamcmd/tf2/tf/cfg/autoexec.cfg
+echo 'sm_respawn_time_red 2' >> /home/steam/steamcmd/tf2/tf/cfg/autoexec.cfg
 
 while true; do
 cp -asf /mnt/* /home/steam/steamcmd/tf2/tf
